@@ -1,0 +1,95 @@
+﻿@*@model NHISWeb.Models.AuthorizationCode.VerifyAuthorizationCodeDto
+
+@{
+    ViewData["Title"] = "VerifyAuthCode";
+}
+
+<h1>VerifyAuthCode</h1>
+
+<h4>VerifyAuthorizationCodeDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="VerifyAuthCode">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InputCode" class="control-label"></label>
+                <input asp-for="InputCode" class="form-control" />
+                <span asp-validation-for="InputCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+*@
+
+
+
+@model NHISWeb.Models.AuthorizationCode.VerifyAuthorizationCodeDto
+
+@{
+    ViewData["Title"] = "VerifyAuthCode";
+}
+
+<fieldset>
+    
+    <legend>
+        Verify Your Authorization Code @*I love d interface of this login page*@
+    </legend>
+    @using(Html.BeginForm("VerifyAuthCode", "Authentication", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-6">
+                @Html.LabelFor(model => model.InputCode)
+                  
+                
+                    
+                 @Html.TextBoxFor(model => model.InputCode, null, new{@class = "form-control"})
+               
+                    
+                 @Html.ValidationMessageFor(model => model.InputCode, null, new{@class = "text text-danger"})
+                   
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div>
+                 <input type="submit" class="btn btn-success" value="submit" />
+            </div>
+        </div>
+        <div>
+    <a asp-action="Index">Back to List</a>
+</div>
+    }

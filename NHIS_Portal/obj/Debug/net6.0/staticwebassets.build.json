@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "jqUSC3NKwBMNblJLaYWw/VHewqL666VyevVF5Q8Lk4w=",
+  "Source": "NHIS_Portal",
+  "BasePath": "_content/NHIS_Portal",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

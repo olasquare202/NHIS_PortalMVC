@@ -1,0 +1,12 @@
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\bin\Debug\net6.0\NHIS_Portal.Service.deps.json
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\bin\Debug\net6.0\NHIS_Portal.Service.dll
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\bin\Debug\net6.0\NHIS_Portal.Service.pdb
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.AssemblyInfo.cs
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.dll
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\refint\NHIS_Portal.Service.dll
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\NHIS_Portal.Service.pdb
+C:\Users\hp\source\repos\NHIS_Portal\NHIS_Portal.Service\obj\Debug\net6.0\ref\NHIS_Portal.Service.dll

@@ -1,0 +1,173 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model NHISWeb.Dto.RequestDto.UserRegister
+@*@model UserRegister*@
+@{
+    ViewBag.Title = "Register";
+}
+@*@Html.ValidationMessageFor(model => model.Password, null, new{@class = "text text-danger"})*@
+    
+<fieldset>
+    
+    <legend>
+        User registration
+    </legend>
+    @using(Html.BeginForm("Register", "Authentication", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-6">
+                <label for="BranchId">Branch</label>@*<br/>*@
+                <select id="BranchId", name="BranchId" class="form-control">
+                    <option value="dedault">--Select--</option>
+                    <option value="1">Lagos</option>
+                    <option value="2">Akure</option>
+                    <option value="3">Ibadan</option>
+                    <option value="4">Anthony</option>
+
+                </select>
+
+               @* <select id="branches" name="branches">
+                    @foreach (var branch in ViewBag.Branch)
+                    {
+                        <option value="@branch.Id">@branch.Name</option>
+                    }
+                </select>
+*@
+
+
+
+                </div>
+             <div class="col-6">
+                 <label for="UserRoleId">User Role</label>
+                    
+                <select id="UserRoleId" name="UserRoleId" class="form-control">
+                    <option value="dedault">--Select--</option>
+                    <option value="1">QA</option>
+                    <option value="2">Audit</option>
+                    <option value="3">Call center</option>
+                    <option value="4">IT</option>
+
+                </select>
+                </div>
+              
+
+       
+       
+               
+                 <div class="col-6">
+                 
+            
+                    
+                     <label for="DepartmentId">Department</label>
+                    
+                <select id="DepartmentId" name="DepartmentId" class="form-control">
+                    <option value="dedault">--Select--</option>
+                    <option value="1">Customer Service</option>
+                    <option value="2">Claim</option>
+                    <option value="3">Finance</option>
+                    <option value="4">Admin</option>
+
+                </select>
+                    
+              
+                
+              </div>
+           
+               
+               
+                  
+                
+                <div class="col-6">
+                
+
+                
+                    @Html.LabelFor(model => model.StaffId)
+                  
+               
+               
+                   
+                    @Html.TextBoxFor(model => model.StaffId, null, new{@class = "form-control"})
+                
+                        @Html.ValidationMessageFor(model => model.StaffId, null, new{@class = "text text-danger"})
+                    
+                </div>
+                
+                 
+                <div class="col-6">
+                
+                   @Html.LabelFor(model => model.FirstName)
+                  
+                
+                    
+                    @Html.TextBoxFor(model => model.FirstName, null, new{@class = "form-control"})
+               
+                    
+                        @Html.ValidationMessageFor(model => model.FirstName, null, new{@class = "text text-danger"})
+                   
+                
+                </div>
+                
+                 
+                <div class="col-6">
+               
+                   @Html.LabelFor(model => model.LastName)
+                   
+               
+                   
+                    @Html.TextBoxFor(model => model.LastName, null, new{@class = "form-control"})
+                
+                        @Html.ValidationMessageFor(model => model.LastName, null, new{@class = "text text-danger"})
+                    
+                </div>
+               
+                 
+                <div class="col-6">
+                
+                   @Html.LabelFor(model => model.Email)
+                
+                  @Html.TextBoxFor(model => model.Email, null, new{@class = "form-control"})
+                
+                   
+                        @Html.ValidationMessageFor(model => model.Email, null, new{@class = "text text-danger"})
+                    
+            
+            </div>
+           
+            
+            <div class="col-6">
+            
+                
+                   @Html.LabelFor(model => model.Password)
+                   @*@Html.Label("Password","Password")*@
+                
+               
+                   @Html.TextBoxFor(model => model.Password, null, new{@class = "form-control"})
+               
+                        @Html.ValidationMessageFor(model => model.Password, null, new{@class = "text text-danger"})
+                        
+
+                   
+            
+            </div>
+            
+             
+            
+                  <br />
+               <div>
+                                <input type="submit" class="btn btn-success" value="Register" />
+                            
+                                <input type="button" class="btn btn-danger" value="Forgot Password" />
+                          
+                 </div>
+           
+        </div>
+        @*<tr>
+            <td colspan="2">
+                @Html.LabelFor(model => model.SuccessMessage, null, new{ @class = "alert alert-success"})
+            </td>
+        </tr>*@
+    }
+    
+</fieldset>
+

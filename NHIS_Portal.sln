@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHIS_Portal.Service", "NHIS_Portal.Service\NHIS_Portal.Service.csproj", "{34B58A2F-6C23-4535-A4B2-8E958B1C6D68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHISWeb", "NHISWeb\NHISWeb.csproj", "{1350122B-5FC7-46B8-8438-EC539EF31B48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34B58A2F-6C23-4535-A4B2-8E958B1C6D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B58A2F-6C23-4535-A4B2-8E958B1C6D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B58A2F-6C23-4535-A4B2-8E958B1C6D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B58A2F-6C23-4535-A4B2-8E958B1C6D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1350122B-5FC7-46B8-8438-EC539EF31B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1350122B-5FC7-46B8-8438-EC539EF31B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1350122B-5FC7-46B8-8438-EC539EF31B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1350122B-5FC7-46B8-8438-EC539EF31B48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FA44413-7643-4546-92E8-B1D9FEC8E864}
+	EndGlobalSection
+EndGlobal
