@@ -1,0 +1,11 @@
+﻿@model NHISWeb.Models.AuthorizationCode.AuthorizationCode
+                
+@{
+    ViewBag.Tile = "GetResultToFrontEnd";
+}
+<h3>Get Your Code</h3>
+
+ <p> @ViewBag.Message </p>
+ <p> @ViewBag.Status </p>
+ <p> @ViewBag.Data </p>
+ <script type="text/javascript">swal("Authorization code successfully generated")</script>

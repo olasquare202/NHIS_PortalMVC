@@ -1,8 +1,8 @@
 ﻿@model NHISWeb.Models.AuthorizationCode.AuthorizationCode
                 
-<h2>User Data</h2>
-<p>User Name: @Model.Id</p>
-<p>Email: @Model.EnroleeName</p>
+@*<h2>User Data</h2>
+<p>UserId: @Model.Id</p>
+<p>Name: @Model.EnroleeName</p>
 <p>Email: @Model.EnroleeNumber</p>
 <p>Email: @Model.EnroleePhoneNumber</p>
 <p>Email: @Model.Provider</p>
@@ -10,6 +10,68 @@
 <p>Email: @Model.IssuedBy</p>
 <p>Email: @Model.IssuedDate</p>
 <p>Email: @Model.Code</p>
+*@
 
 
 
+
+<fieldset>
+    
+    <legend>
+        User Information @*I love d interface of this login page*@
+    </legend>
+    @using(Html.BeginForm("DisplayAuthInfo", "Authentication", FormMethod.Get))
+
+    {
+      <div class="row">
+          <div class="col-6">
+              @Html.LabelFor(model => model.EnroleeName)
+              @Html.TextBoxFor(model => model.EnroleeName, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.EnroleeName, null, new{@class = "text text-danger"})
+          </div>
+          <div class="col-6">
+              
+              @Html.LabelFor(model => model.EnroleeNumber)
+              @Html.TextBoxFor(model => model.EnroleeNumber, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.EnroleeNumber, null, new{@class = "text text-danger"})
+        
+          </div>
+           <div class="col-6">
+              @Html.LabelFor(model => model.EnroleePhoneNumber)
+              @Html.TextBoxFor(model => model.EnroleePhoneNumber, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.EnroleePhoneNumber, null, new{@class = "text text-danger"})
+          </div>
+           <div class="col-6">
+              @Html.LabelFor(model => model.Provider)
+              @Html.TextBoxFor(model => model.Provider, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.Provider, null, new{@class = "text text-danger"})
+          </div>
+           <div class="col-6">
+              @Html.LabelFor(model => model.Diagnosis)
+              @Html.TextBoxFor(model => model.Diagnosis, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.Diagnosis, null, new{@class = "text text-danger"})
+          </div>
+           <div class="col-6">
+              @Html.LabelFor(model => model.IssuedBy)
+              @Html.TextBoxFor(model => model.IssuedBy, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.IssuedBy, null, new{@class = "text text-danger"})
+          </div>
+           <div class="col-6">
+              @Html.LabelFor(model => model.IssuedDate)
+              @Html.TextBoxFor(model => model.IssuedDate, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.IssuedDate, null, new{@class = "text text-danger"})
+          </div>
+           <div class="col-6">
+              @Html.LabelFor(model => model.Code)
+              @Html.TextBoxFor(model => model.Code, null, new{@class = "form-control"})
+              @Html.ValidationMessageFor(model => model.Code, null, new{@class = "text text-danger"})
+          </div>
+           
+          </div>
+          <div>
+               <a asp-controller = "Home" asp-action="Index">Back to Portal</a>
+     </div>
+          
+          }
+
+</fieldset>

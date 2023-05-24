@@ -142,7 +142,7 @@
                    @*@Html.Label("Password","Password")*@
                 
                
-                   @Html.TextBoxFor(model => model.Password, null, new{@class = "form-control"})
+                   @Html.PasswordFor(model => model.Password, new{@class = "form-control"})
                
                         @Html.ValidationMessageFor(model => model.Password, null, new{@class = "text text-danger"})
                         
@@ -170,4 +170,6 @@
     }
     
 </fieldset>
+
+<script type="text/javascript">swal("Welcome! Kindly register")</script>
 

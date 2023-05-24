@@ -51,14 +51,14 @@ namespace NHISWeb.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8172b998-d791-46e6-b894-53b3300491b2",
+                            Id = "97d1c9ab-52c5-429c-afbd-6d1d532a412d",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "c8543d1d-06f5-4b8c-b661-47d638b61d0f",
+                            Id = "e265847d-c96e-4369-bc81-c769934bd600",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
@@ -200,9 +200,10 @@ namespace NHISWeb.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("IssuedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("IssuedDate")
+                    b.Property<DateTime>("IssuedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Provider")

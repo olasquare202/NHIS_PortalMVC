@@ -8,6 +8,7 @@ using NHISWeb.Dto.RequestDto;
 using NHISWeb.Models.Authentication;
 using NHISWeb.Models.AuthorizationCode;
 using NHISWeb.Models.Entities;
+using NHISWeb.Views.VerifyCodeModel;
 //using System;
 //using System.NHIS.SessionState;
 
@@ -81,7 +82,7 @@ namespace NHISWeb.Controllers
                 user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, createUser.Password);
               
                 await _db.SaveChangesAsync();
-                
+                return RedirectToAction("Login");
                 return View();
 
             }
@@ -121,6 +122,13 @@ namespace NHISWeb.Controllers
             return RedirectToAction("Index", "Home");
             return View();
         }
+        
+        [HttpGet]
+        public IActionResult GetResultToFrontEnd()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult AuthorizationCode()
         {
@@ -131,7 +139,7 @@ namespace NHISWeb.Controllers
         public async Task <IActionResult> AuthorizationCode(CreateAuthorizationCode createAuthorizationCode)
         {
             //Check if authorizationCodeExist
-            var authorizationCodeExist = _db.AuthorizationCodes.Where(c => c.EnroleeName == createAuthorizationCode.EnroleeName).FirstOrDefault();
+            var authorizationCodeExist = await _db.AuthorizationCodes.Where(c => c.EnroleeName == createAuthorizationCode.EnroleeName).FirstOrDefaultAsync();
             if (authorizationCodeExist != null)
             {
                 return StatusCode(StatusCodes.Status403Forbidden,
@@ -149,6 +157,7 @@ namespace NHISWeb.Controllers
                 EnroleePhoneNumber = createAuthorizationCode.EnroleePhoneNumber,
                 Provider = createAuthorizationCode.Provider,
                 Diagnosis = createAuthorizationCode.Diagnosis,
+                IssuedBy = createAuthorizationCode.IssuedBy,
                 Code = authCode
 
             };
@@ -156,9 +165,16 @@ namespace NHISWeb.Controllers
             var myCode = _db.SaveChanges();
             if (myCode > 0)
             {
-                return StatusCode(StatusCodes.Status201Created,
-                    new Response { Status = "Success", Message = "Authorization code generated successfully", Data = addAuthorizationCode }
-                    );
+                ViewBag.Status = "Success";
+                ViewBag.Message = "Authorization code generated successfully";
+                ViewBag.Data = authCode;
+;
+
+
+                return View("GetResultToFrontEnd");
+                //return StatusCode(StatusCodes.Status201Created,
+                //    new Response { Status = "Success", Message = "Authorization code generated successfully", Data = addAuthorizationCode }
+                //    );
             }
             else
             {
@@ -178,14 +194,26 @@ namespace NHISWeb.Controllers
         }
         [HttpPost]
         //I use <IActionResult> if i want to return Ok
-        public async Task<IActionResult> VerifyAuthCode(string EnterAuthorisationCode)
+        public async Task<IActionResult> VerifyAuthCode(VerifyAuthCodeClass verifyAuthCodeClass)
         {
-            //var authCode = _db.AuthorizationCodes.Where(b => b.Code.Contains(EnterAuthorisationCode)).ToList();
-            var userInfo = await _db.AuthorizationCodes.Where(c => c.Code == EnterAuthorisationCode).FirstOrDefaultAsync();
-            
+            try
+            {
+               // var test = EnterAuthorisationCode.ToLower();
+                //var all = await _db.AuthorizationCodes.Where(c => c.Code.ToLower() == test)
+                var userInfo = await _db.AuthorizationCodes.Where(c => c.Code == verifyAuthCodeClass.EnterAuthorisationCode).FirstOrDefaultAsync();
+                //var userInfoTest = ).FirstOrDefaultAsync();
 
-            //return Ok(authCode);
-            return View ("AuthorizationCode", userInfo);
+
+                //return Ok(authCode);
+                return View("DisplayAuthInfo", userInfo);
+            }
+            catch(Exception ex)
+            {
+                return View();
+            }
+
+            //var authCode = _db.AuthorizationCodes.Where(b => b.Code.Contains(EnterAuthorisationCode)).ToList();
+            
         }
 
     }

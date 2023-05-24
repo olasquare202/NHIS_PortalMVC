@@ -50,14 +50,14 @@
     {
         <div class="row">
             <div class="col-6">
-                @Html.LabelFor(model => model.InputCode)
+                @Html.LabelFor(model => model.EnterAuthorisationCode)
                   
                 
                     
-                 @Html.TextBoxFor(model => model.InputCode, null, new{@class = "form-control"})
+                 @Html.TextBoxFor(model => model.EnterAuthorisationCode, null, new{@class = "form-control"})
                
                     
-                 @Html.ValidationMessageFor(model => model.InputCode, null, new{@class = "text text-danger"})
+                 @Html.ValidationMessageFor(model => model.EnterAuthorisationCode, null, new{@class = "text text-danger"})
                    
 
             </div>
@@ -90,6 +90,6 @@
             </div>
         </div>
         <div>
-    <a asp-action="Index">Back to List</a>
-</div>
+               <a asp-controller = "Home" asp-action="Index">Back to Portal</a>
+     </div>
     }

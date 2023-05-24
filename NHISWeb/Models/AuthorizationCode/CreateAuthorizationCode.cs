@@ -8,6 +8,7 @@
         public string EnroleePhoneNumber { get; set; }
         public string Provider { get; set; }
         public string Diagnosis { get; set; }
+        public string IssuedBy { get; set; }
         
     }
 }

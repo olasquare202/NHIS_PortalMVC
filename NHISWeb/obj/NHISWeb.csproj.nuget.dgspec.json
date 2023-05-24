@@ -83,6 +83,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "SweetAlert": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "SweetAlert.Bootstrap": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [
@@ -146,6 +154,10 @@
             "NETCore.MailKit": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "SweetAlert.Bootstrap": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [
