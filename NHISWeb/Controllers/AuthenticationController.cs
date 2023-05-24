@@ -165,8 +165,8 @@ namespace NHISWeb.Controllers
             var myCode = _db.SaveChanges();
             if (myCode > 0)
             {
-                ViewBag.Status = "Success";
-                ViewBag.Message = "Authorization code generated successfully";
+                //ViewBag.Status = "Success";
+                //ViewBag.Message = "Authorization code generated successfully";
                 ViewBag.Data = authCode;
 ;
 
