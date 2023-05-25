@@ -116,8 +116,9 @@ namespace NHISWeb.Controllers
             return View();
         }
         
-        public IActionResult Logout()
+        public async Task <IActionResult> Logout()
         {
+            //await _userManager.();
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
             return View();
